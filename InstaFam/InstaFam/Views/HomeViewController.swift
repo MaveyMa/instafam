@@ -10,7 +10,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
   
-  @IBOutlet weak var loginBarButtonItem: UIBarButtonItem!
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -23,8 +22,8 @@ class HomeViewController: UIViewController {
   }
   
   @IBAction func onLogout(_ sender: Any) {
+    print("Clicked logout")
     NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
-    
   }
   
   

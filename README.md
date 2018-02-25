@@ -8,9 +8,9 @@ Time spent: **4** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication (+1pt)
-- [ ] User can log in and log out of his or her account (+1pt)
-- [ ] The current signed in user is persisted across app restarts (+1pt)
+- [x] User can sign up to create a new account using Parse authentication (+1pt)
+- [x] User can log in and log out of his or her account (+1pt)
+- [x] The current signed in user is persisted across app restarts (+1pt)
 - [ ] User can take a photo, add a caption, and post it to "Instagram" (+2pt)
 - [ ] User can view the last 20 posts submitted to "Instagram" (+2pt)
 - [ ] User can pull to refresh the last 20 posts submitted to "Instagram" (+1pt)
@@ -65,7 +65,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 Describe any challenges encountered while building the app.
 * Learned how to implement [persisting user session](https://guides.codepath.com/ios/Building-Data-driven-Apps-with-Parse#persisting-user-session); the window's storyboard should be instantiated with the ID of the NavigationController, *not* the ID of the HomeViewController.
-
+* Learned how to give TextView some [placeholder text](https://stackoverflow.com/questions/27652227/text-view-placeholder-swift)
 
 ## License
 

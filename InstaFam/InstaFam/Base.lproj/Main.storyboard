@@ -21,7 +21,7 @@
         <!--Home Feed-->
         <scene sceneID="HRP-1n-cbC">
             <objects>
-                <viewController storyboardIdentifier="HomeFeedViewController" id="VR6-fw-zqs" customClass="HomeViewController" customModule="InstaFam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="VR6-fw-zqs" customClass="HomeViewController" customModule="InstaFam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pVw-8b-cok">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,14 +34,71 @@
                                 <action selector="onLogout:" destination="VR6-fw-zqs" id="ouX-gU-83Y"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="y6m-9z-QhQ">
+                            <connections>
+                                <segue destination="MVk-f0-BYM" kind="presentation" id="qd9-ku-rId"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="loginBarButtonItem" destination="EcZ-2S-qbW" id="mR9-6U-uSe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWX-PO-s90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1735" y="133"/>
+        </scene>
+        <!--New Post-->
+        <scene sceneID="5t0-td-HL2">
+            <objects>
+                <viewController storyboardIdentifier="ComposeViewController" id="iq8-Cg-rPl" customClass="ComposeViewController" customModule="InstaFam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wZQ-Ip-Phd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOB-iw-Ihk">
+                                <rect key="frame" x="8" y="72" width="128" height="128"/>
+                                <color key="backgroundColor" red="0.88583839471412573" green="0.56168769957118436" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="kfN-N0-JeD"/>
+                                    <constraint firstAttribute="height" constant="128" id="kqJ-VN-xbj"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SVc-vn-6EW">
+                                <rect key="frame" x="144" y="72" width="223" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SVc-vn-6EW" firstAttribute="leading" secondItem="EOB-iw-Ihk" secondAttribute="trailing" constant="8" id="5IN-rr-wmI"/>
+                            <constraint firstItem="1s9-rc-Rxf" firstAttribute="trailing" secondItem="SVc-vn-6EW" secondAttribute="trailing" constant="8" id="EDV-68-8Sb"/>
+                            <constraint firstItem="EOB-iw-Ihk" firstAttribute="top" secondItem="1s9-rc-Rxf" secondAttribute="top" constant="8" id="Hc6-EU-wxd"/>
+                            <constraint firstItem="EOB-iw-Ihk" firstAttribute="leading" secondItem="1s9-rc-Rxf" secondAttribute="leading" constant="8" id="I3N-GB-ZpH"/>
+                            <constraint firstItem="SVc-vn-6EW" firstAttribute="bottom" secondItem="EOB-iw-Ihk" secondAttribute="bottom" id="PE5-AI-J9P"/>
+                            <constraint firstItem="SVc-vn-6EW" firstAttribute="top" secondItem="EOB-iw-Ihk" secondAttribute="top" id="ugC-Ob-6Xh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1s9-rc-Rxf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Post" id="wsX-So-u5L">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="RqU-Ci-Ldj">
+                            <connections>
+                                <action selector="onCancel:" destination="iq8-Cg-rPl" id="Hce-RV-xC5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="wk5-qs-Y6K">
+                            <connections>
+                                <action selector="onShare:" destination="iq8-Cg-rPl" id="LkX-NZ-CDU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="SVc-vn-6EW" id="aGQ-4h-Z5C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qbz-cL-5gJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3293.5999999999999" y="132.68365817091455"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -150,5 +207,26 @@
             </objects>
             <point key="canvasLocation" x="956.79999999999995" y="132.23388305847078"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nqp-8u-pZD">
+            <objects>
+                <navigationController storyboardIdentifier="ComposeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="MVk-f0-BYM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OR6-6o-UsV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iq8-Cg-rPl" kind="relationship" relationship="rootViewController" id="HyC-dq-AvL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01L-iK-TF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2508" y="132"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>

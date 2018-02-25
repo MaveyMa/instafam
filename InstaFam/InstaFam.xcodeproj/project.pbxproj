@@ -11,6 +11,7 @@
 		8BE2BED0F80A98A79668371F /* Pods_InstaFamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE31AC253FCA96B6746BDFA /* Pods_InstaFamUITests.framework */; };
 		A95F34833B40DF02A05C2437 /* Pods_InstaFamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D212A106AF6FAFF9C07B4528 /* Pods_InstaFamTests.framework */; };
 		DB454140203B9226007B45F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB45413F203B9226007B45F2 /* LoginViewController.swift */; };
+		DB85920B20425BE500436787 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85920A20425BE500436787 /* ComposeViewController.swift */; };
 		DBC2B48A203B8B7000E47C67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC2B489203B8B7000E47C67 /* AppDelegate.swift */; };
 		DBC2B48F203B8B7000E47C67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC2B48D203B8B7000E47C67 /* Main.storyboard */; };
 		DBC2B491203B8B7000E47C67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC2B490203B8B7000E47C67 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		C08B994B28FFDA0A0CA5E114 /* Pods-InstaFam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaFam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaFam/Pods-InstaFam.debug.xcconfig"; sourceTree = "<group>"; };
 		D212A106AF6FAFF9C07B4528 /* Pods_InstaFamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaFamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB45413F203B9226007B45F2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DB85920A20425BE500436787 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		DBC2B486203B8B7000E47C67 /* InstaFam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaFam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC2B489203B8B7000E47C67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBC2B48E203B8B7000E47C67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		DB454141203B940C007B45F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB85920A20425BE500436787 /* ComposeViewController.swift */,
 				DB45413F203B9226007B45F2 /* LoginViewController.swift */,
 				DBE9FFAF20421E5600277606 /* HomeViewController.swift */,
 			);
@@ -478,6 +481,7 @@
 				DB454140203B9226007B45F2 /* LoginViewController.swift in Sources */,
 				DBC2B48A203B8B7000E47C67 /* AppDelegate.swift in Sources */,
 				DBE9FFB020421E5600277606 /* HomeViewController.swift in Sources */,
+				DB85920B20425BE500436787 /* ComposeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
