@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
   
   @IBOutlet weak var usernameField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -19,12 +20,10 @@ class LoginViewController: UIViewController {
     usernameField.becomeFirstResponder()
   }
   
-  
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
+  
   @IBAction func onSignIn(_ sender: Any) {
     PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user, error) -> Void in
       if user != nil {
@@ -35,7 +34,6 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func onSignUp(_ sender: Any) {
-    
     let newUser = PFUser()
     
     newUser.username = usernameField.text
@@ -52,6 +50,6 @@ class LoginViewController: UIViewController {
         }
       }
     }
-    
   }
+  
 }

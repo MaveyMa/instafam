@@ -31,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       self.logOut()
     }
     
+    // check if user is logged in.
+    if PFUser.current() != nil {
+      // Load and show the login view controller
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let navigationViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+      self.window?.rootViewController = navigationViewController
+    }
+    
     return true
   }
   
@@ -40,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       if let error = error {
         print(error.localizedDescription)
       } else {
-        print("Successful loggout")
+        print("Successful logout")
         // Load and show the login view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")

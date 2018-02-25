@@ -2,7 +2,7 @@
 
 **InstaFam** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -64,6 +64,8 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 ## Notes
 
 Describe any challenges encountered while building the app.
+* Learned how to implement [persisting user session](https://guides.codepath.com/ios/Building-Data-driven-Apps-with-Parse#persisting-user-session); the window's storyboard should be instantiated with the ID of the NavigationController, *not* the ID of the HomeViewController.
+
 
 ## License
 

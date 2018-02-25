@@ -21,7 +21,7 @@
         <!--Home Feed-->
         <scene sceneID="HRP-1n-cbC">
             <objects>
-                <viewController id="VR6-fw-zqs" customClass="HomeViewController" customModule="InstaFam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeFeedViewController" id="VR6-fw-zqs" customClass="HomeViewController" customModule="InstaFam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pVw-8b-cok">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hZ6-Jc-J5q">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XSo-Wm-M8W" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthenticatedViewController" automaticallyAdjustsScrollViewInsets="NO" id="XSo-Wm-M8W" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2K5-CK-y2k">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
