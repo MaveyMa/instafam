@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Toucan
 class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   @IBOutlet weak var captionTextView: UITextView!
@@ -19,20 +19,30 @@ class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePicker
     captionTextView.delegate = self
     captionTextView.text = "Write a caption..."
     captionTextView.textColor = UIColor.lightGray
-  
+    
     self.hideKeyboard()
-    
-    
+  
   }
+  
   
   @IBAction func onClickImageView(_ sender: Any) {
     // Instantiate a UIImagePickerController
     let vc = UIImagePickerController()
     vc.delegate = self
     vc.allowsEditing = true
-    vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    //vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    
+    
+    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+      print("Camera is available 📸")
+      vc.sourceType = UIImagePickerControllerSourceType.camera
+    } else {
+      print("Camera 🚫 available so we will use photo library instead")
+      vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    }
     
     self.present(vc, animated: true, completion: nil)
+    
   }
   
   // When the user finishes taking the picture, UIImagePickerController returns a dictionary that contains the image and some other meta data. The full set of keys are listed here.
@@ -40,13 +50,15 @@ class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePicker
                              didFinishPickingMediaWithInfo info: [String : Any]) {
     // Get the image captured by the UIImagePickerController
     let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-    let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
-    print("f")
+    // let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    
+    //let resizedImage = Toucan.Resize.resizeImage(originalImage, size: CGSize(width: 50, height: 50))
+    
     // Do something with the images (based on your use case)
     newPostImageView.image = originalImage
     // Dismiss UIImagePickerController to go back to your original view controller
     dismiss(animated: true, completion: nil)
-    print("f")
+    
   }
   
   func textViewDidBeginEditing(_ textView: UITextView) {

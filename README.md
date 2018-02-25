@@ -2,7 +2,7 @@
 
 **InstaFam** is a photo sharing app using Parse as its backend.
 
-Time spent: **4** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
@@ -60,6 +60,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 - <div>Launch screen icon made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 - [App Icon Maker](http://appiconmaker.co/Home/Index/ce3fc1bf-4be2-4d9d-90b4-ef795b009a55) - creates downloadable png files of various sizes
 - [Billabong Font](https://techiestechguide.com/instagram-font/) - downloaded Instagram-like font
+- [Toucan](https://cocoapods.org/pods/Toucan) - Cocoa Pod for resizing images
 
 ## Notes
 
