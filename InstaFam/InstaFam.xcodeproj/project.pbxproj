@@ -19,6 +19,7 @@
 		DBC2B49F203B8B7100E47C67 /* InstaFamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC2B49E203B8B7100E47C67 /* InstaFamTests.swift */; };
 		DBC2B4AA203B8B7100E47C67 /* InstaFamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC2B4A9203B8B7100E47C67 /* InstaFamUITests.swift */; };
 		DBCBFE4B203FF04F00F4AB12 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBCBFE4A203FF04F00F4AB12 /* Billabong.ttf */; };
+		DBD1D34320434F0F007DF55C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1D34220434F0F007DF55C /* Post.swift */; };
 		DBE9FFB020421E5600277606 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE9FFAF20421E5600277606 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		DBC2B4A9203B8B7100E47C67 /* InstaFamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaFamUITests.swift; sourceTree = "<group>"; };
 		DBC2B4AB203B8B7100E47C67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBCBFE4A203FF04F00F4AB12 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = SOURCE_ROOT; };
+		DBD1D34220434F0F007DF55C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DBE31AC253FCA96B6746BDFA /* Pods_InstaFamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaFamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE9FFAF20421E5600277606 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EAB7615A97EE1BD3949ECF9D /* Pods-InstaFamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaFamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaFamUITests/Pods-InstaFamUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		DBC2B488203B8B7000E47C67 /* InstaFam */ = {
 			isa = PBXGroup;
 			children = (
+				DBD1D34120434EF2007DF55C /* Models */,
 				DB454141203B940C007B45F2 /* Views */,
 				DBC2B489203B8B7000E47C67 /* AppDelegate.swift */,
 				DBC2B48D203B8B7000E47C67 /* Main.storyboard */,
@@ -170,6 +173,14 @@
 				DBC2B4AB203B8B7100E47C67 /* Info.plist */,
 			);
 			path = InstaFamUITests;
+			sourceTree = "<group>";
+		};
+		DBD1D34120434EF2007DF55C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBD1D34220434F0F007DF55C /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED9C174042420584F7C39848 /* Frameworks */ = {
@@ -484,6 +495,7 @@
 				DBC2B48A203B8B7000E47C67 /* AppDelegate.swift in Sources */,
 				DBE9FFB020421E5600277606 /* HomeViewController.swift in Sources */,
 				DB85920B20425BE500436787 /* ComposeViewController.swift in Sources */,
+				DBD1D34320434F0F007DF55C /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,9 @@ class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePicker
     captionTextView.textColor = UIColor.lightGray
     
     self.hideKeyboard()
-  
+    
+    //To upload the user image to Parse, get the user input from the view controller and then call the postUserImage method from the view controller by passing all the required arguments into it (Please see method's comments for more details on arguments).
+    
   }
   
   
@@ -42,7 +44,6 @@ class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePicker
     }
     
     self.present(vc, animated: true, completion: nil)
-    
   }
   
   // When the user finishes taking the picture, UIImagePickerController returns a dictionary that contains the image and some other meta data. The full set of keys are listed here.
@@ -52,10 +53,10 @@ class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePicker
     let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
     // let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
     
-    //let resizedImage = Toucan.Resize.resizeImage(originalImage, size: CGSize(width: 50, height: 50))
+    let resizedImage = Toucan.Resize.resizeImage(originalImage, size: CGSize(width: 258, height: 258))
     
     // Do something with the images (based on your use case)
-    newPostImageView.image = originalImage
+    newPostImageView.image = resizedImage
     // Dismiss UIImagePickerController to go back to your original view controller
     dismiss(animated: true, completion: nil)
     
@@ -88,6 +89,15 @@ class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePicker
   @IBAction func onShare(_ sender: Any) {
     captionTextView.resignFirstResponder()
     print("Clicked share")
+    Post.postUserImage(image: newPostImageView.image, withCaption: captionTextView.text) { (success, error) in
+      if success {
+        print("Great new post!")
+      }
+      else if let e = error as NSError? {
+        print(e.localizedDescription)
+        print("Something went wrong with your post.")
+      }
+    }
     NotificationCenter.default.post(name: NSNotification.Name("didCancel"), object: nil)
   }
   
