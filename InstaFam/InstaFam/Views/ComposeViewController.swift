@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController, UITextViewDelegate {
+class ComposeViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   @IBOutlet weak var captionTextView: UITextView!
+  @IBOutlet weak var newPostImageView: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +21,32 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     captionTextView.textColor = UIColor.lightGray
   
     self.hideKeyboard()
+    
+    
+  }
+  
+  @IBAction func onClickImageView(_ sender: Any) {
+    // Instantiate a UIImagePickerController
+    let vc = UIImagePickerController()
+    vc.delegate = self
+    vc.allowsEditing = true
+    vc.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    
+    self.present(vc, animated: true, completion: nil)
+  }
+  
+  // When the user finishes taking the picture, UIImagePickerController returns a dictionary that contains the image and some other meta data. The full set of keys are listed here.
+  func imagePickerController(_ picker: UIImagePickerController,
+                             didFinishPickingMediaWithInfo info: [String : Any]) {
+    // Get the image captured by the UIImagePickerController
+    let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+    let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    print("f")
+    // Do something with the images (based on your use case)
+    newPostImageView.image = originalImage
+    // Dismiss UIImagePickerController to go back to your original view controller
+    dismiss(animated: true, completion: nil)
+    print("f")
   }
   
   func textViewDidBeginEditing(_ textView: UITextView) {
