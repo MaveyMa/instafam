@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
   
   @IBOutlet weak var homeFeedTableView: UITableView!
   var posts: [Post] = []
+  var refreshControl: UIRefreshControl!
   
   override func viewWillAppear(_ animated: Bool) {
     get20PostsFromParse()
@@ -24,9 +25,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     homeFeedTableView.rowHeight = UITableViewAutomaticDimension
     homeFeedTableView.estimatedRowHeight = 300
     
+    refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
+    homeFeedTableView.insertSubview(refreshControl, at: 0)
+    
     homeFeedTableView.delegate = self
     homeFeedTableView.dataSource = self
     self.homeFeedTableView.reloadData()
+    get20PostsFromParse()
+  }
+  
+  @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
     get20PostsFromParse()
   }
   
@@ -43,15 +52,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
   func get20PostsFromParse(){
     let query = Post.query()
     query?.order(byDescending: "createdAt")
-    query?.includeKey("author")
-    query?.whereKey("author", equalTo: PFUser.current()!)
+    query?.includeKey("author.username")
+    query?.includeKey("createdAt")
+    //query?.whereKey("author", equalTo: PFUser.current()!)
     query?.limit = 20
     
     // fetch data asynchronously
     query?.findObjectsInBackground { (Post, error: Error?) -> Void in
       if let posts = Post {
         // do something with the data fetched
-        print(posts)
+        //print(posts)
         // passing over my local posts to my global posts
         self.posts = posts as! [Post]
         self.homeFeedTableView.reloadData()
@@ -60,6 +70,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("Failed to retrieve 20 objects from Parse server")
       }
     }
+    self.homeFeedTableView.reloadData()
+    self.refreshControl.endRefreshing()
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,5 +101,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return posts.count
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "PostDetailSegue" {
+      let cell = sender as! UITableViewCell
+      if let indexPath = homeFeedTableView.indexPath(for: cell) {
+        let post = posts[indexPath.row]
+        let detailViewController = segue.destination as! PostDetailViewController
+        detailViewController.post = post
+      }
+    }
+  }
+  
   
 }

@@ -13,12 +13,6 @@ class PostCell: UITableViewCell {
   @IBOutlet weak var postImageView: PFImageView!
   @IBOutlet weak var postCaptionLabel: UILabel!
   
-  var instagramPost: PFObject! {
-    didSet {
-      self.postImageView.file = instagramPost["image"] as? PFFile
-      self.postImageView.loadInBackground()
-    }
-  }
   
   override func awakeFromNib() {
         super.awakeFromNib()
