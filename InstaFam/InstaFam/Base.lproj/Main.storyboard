@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,25 +27,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-6g-REf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="439" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-6g-REf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="300" id="jd9-Qd-MtQ" customClass="PostCell" customModule="InstaFam" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="439" id="jd9-Qd-MtQ" customClass="PostCell" customModule="InstaFam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="439"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jd9-Qd-MtQ" id="3p0-tf-axD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="438.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eoB-uG-DRo" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eoB-uG-DRo" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="256" id="6RX-ee-0a2"/>
+                                                        <constraint firstAttribute="width" secondItem="eoB-uG-DRo" secondAttribute="height" multiplier="99:99" id="FTX-Th-wKh"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert Caption Here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td8-ag-0iN">
-                                                    <rect key="frame" x="8" y="264" width="359" height="27.5"/>
+                                                    <rect key="frame" x="8" y="383" width="359" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -54,7 +55,7 @@
                                                 <constraint firstItem="td8-ag-0iN" firstAttribute="trailing" secondItem="eoB-uG-DRo" secondAttribute="trailing" constant="-8" id="IBF-Jo-BpI"/>
                                                 <constraint firstItem="td8-ag-0iN" firstAttribute="top" secondItem="eoB-uG-DRo" secondAttribute="bottom" constant="8" id="VNi-mY-bCF"/>
                                                 <constraint firstItem="eoB-uG-DRo" firstAttribute="leading" secondItem="3p0-tf-axD" secondAttribute="leading" id="YgH-nU-Kbz"/>
-                                                <constraint firstAttribute="bottom" secondItem="td8-ag-0iN" secondAttribute="bottom" constant="8" id="gEx-qX-7ix"/>
+                                                <constraint firstAttribute="bottom" secondItem="td8-ag-0iN" secondAttribute="bottom" constant="24" id="gEx-qX-7ix"/>
                                                 <constraint firstItem="td8-ag-0iN" firstAttribute="leading" secondItem="3p0-tf-axD" secondAttribute="leading" constant="8" id="neU-Pb-yBQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="eoB-uG-DRo" secondAttribute="trailing" id="sm4-ye-HRA"/>
                                                 <constraint firstItem="eoB-uG-DRo" firstAttribute="top" secondItem="3p0-tf-axD" secondAttribute="top" id="tPD-dZ-MHv"/>
@@ -121,9 +122,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pF-oB-JkP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pF-oB-JkP">
                                 <rect key="frame" x="8" y="72" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="Tja-Fl-DIM"/>
+                                    <constraint firstAttribute="height" constant="128" id="ZB6-Ac-tXd"/>
+                                </constraints>
                                 <connections>
                                     <action selector="onClickImageView:" destination="iq8-Cg-rPl" eventType="touchUpInside" id="hEx-mG-JLd"/>
                                 </connections>
@@ -132,10 +136,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SVc-vn-6EW" firstAttribute="leading" secondItem="EOB-iw-Ihk" secondAttribute="trailing" constant="8" id="5IN-rr-wmI"/>
+                            <constraint firstItem="0pF-oB-JkP" firstAttribute="bottom" secondItem="EOB-iw-Ihk" secondAttribute="bottom" id="8US-hf-UhY"/>
                             <constraint firstItem="1s9-rc-Rxf" firstAttribute="trailing" secondItem="SVc-vn-6EW" secondAttribute="trailing" constant="8" id="EDV-68-8Sb"/>
                             <constraint firstItem="EOB-iw-Ihk" firstAttribute="top" secondItem="1s9-rc-Rxf" secondAttribute="top" constant="8" id="Hc6-EU-wxd"/>
                             <constraint firstItem="EOB-iw-Ihk" firstAttribute="leading" secondItem="1s9-rc-Rxf" secondAttribute="leading" constant="8" id="I3N-GB-ZpH"/>
                             <constraint firstItem="SVc-vn-6EW" firstAttribute="bottom" secondItem="EOB-iw-Ihk" secondAttribute="bottom" id="PE5-AI-J9P"/>
+                            <constraint firstItem="0pF-oB-JkP" firstAttribute="top" secondItem="EOB-iw-Ihk" secondAttribute="top" id="QKQ-oV-qaf"/>
+                            <constraint firstItem="0pF-oB-JkP" firstAttribute="leading" secondItem="EOB-iw-Ihk" secondAttribute="leading" id="uc0-Wh-CAL"/>
                             <constraint firstItem="SVc-vn-6EW" firstAttribute="top" secondItem="EOB-iw-Ihk" secondAttribute="top" id="ugC-Ob-6Xh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1s9-rc-Rxf"/>

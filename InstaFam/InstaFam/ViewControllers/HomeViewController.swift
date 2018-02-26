@@ -15,9 +15,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
   @IBOutlet weak var homeFeedTableView: UITableView!
   var posts: [Post] = []
   
-  
+  override func viewWillAppear(_ animated: Bool) {
+    get20PostsFromParse()
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    homeFeedTableView.rowHeight = UITableViewAutomaticDimension
+    homeFeedTableView.estimatedRowHeight = 300
     
     homeFeedTableView.delegate = self
     homeFeedTableView.dataSource = self
@@ -39,6 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let query = Post.query()
     query?.order(byDescending: "createdAt")
     query?.includeKey("author")
+    query?.whereKey("author", equalTo: PFUser.current()!)
     query?.limit = 20
     
     // fetch data asynchronously
