@@ -8,7 +8,7 @@ target 'InstaFam' do
   # Pods for InstaFam
   pod 'Parse'
   pod 'Toucan' #resizing images
-
+  pod 'ParseUI' #displaying images via PFImageView
   target 'InstaFamTests' do
     inherit! :search_paths
     # Pods for testing

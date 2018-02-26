@@ -25,7 +25,57 @@
                     <view key="view" contentMode="scaleToFill" id="pVw-8b-cok">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-6g-REf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="300" id="jd9-Qd-MtQ" customClass="PostCell" customModule="InstaFam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jd9-Qd-MtQ" id="3p0-tf-axD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eoB-uG-DRo" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="256" id="6RX-ee-0a2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert Caption Here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="td8-ag-0iN">
+                                                    <rect key="frame" x="8" y="264" width="359" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="td8-ag-0iN" firstAttribute="trailing" secondItem="eoB-uG-DRo" secondAttribute="trailing" constant="-8" id="IBF-Jo-BpI"/>
+                                                <constraint firstItem="td8-ag-0iN" firstAttribute="top" secondItem="eoB-uG-DRo" secondAttribute="bottom" constant="8" id="VNi-mY-bCF"/>
+                                                <constraint firstItem="eoB-uG-DRo" firstAttribute="leading" secondItem="3p0-tf-axD" secondAttribute="leading" id="YgH-nU-Kbz"/>
+                                                <constraint firstAttribute="bottom" secondItem="td8-ag-0iN" secondAttribute="bottom" constant="8" id="gEx-qX-7ix"/>
+                                                <constraint firstItem="td8-ag-0iN" firstAttribute="leading" secondItem="3p0-tf-axD" secondAttribute="leading" constant="8" id="neU-Pb-yBQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="eoB-uG-DRo" secondAttribute="trailing" id="sm4-ye-HRA"/>
+                                                <constraint firstItem="eoB-uG-DRo" firstAttribute="top" secondItem="3p0-tf-axD" secondAttribute="top" id="tPD-dZ-MHv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.79172741148681358" blue="0.98068828253787688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="postCaptionLabel" destination="td8-ag-0iN" id="1u6-mX-c4w"/>
+                                            <outlet property="postImageView" destination="eoB-uG-DRo" id="1Ep-Qo-UAB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8cf-jr-NfB" firstAttribute="bottom" secondItem="CK9-6g-REf" secondAttribute="bottom" id="3U9-jP-5ws"/>
+                            <constraint firstItem="CK9-6g-REf" firstAttribute="leading" secondItem="8cf-jr-NfB" secondAttribute="leading" id="Tor-KR-ob2"/>
+                            <constraint firstItem="CK9-6g-REf" firstAttribute="top" secondItem="8cf-jr-NfB" secondAttribute="top" id="gDK-DV-PYx"/>
+                            <constraint firstItem="8cf-jr-NfB" firstAttribute="trailing" secondItem="CK9-6g-REf" secondAttribute="trailing" id="t7O-By-9sh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8cf-jr-NfB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home Feed" id="zU0-gd-CJW">
@@ -40,10 +90,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="homeFeedTableView" destination="CK9-6g-REf" id="W9z-xj-dbQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWX-PO-s90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="133"/>
+            <point key="canvasLocation" x="1733.5999999999999" y="132.68365817091455"/>
         </scene>
         <!--New Post-->
         <scene sceneID="5t0-td-HL2">

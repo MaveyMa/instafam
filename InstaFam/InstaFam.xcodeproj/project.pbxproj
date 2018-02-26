@@ -10,6 +10,7 @@
 		4759C41BACBE85377609EF7B /* Pods_InstaFam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C532F2C8F4278D540CFC6B6 /* Pods_InstaFam.framework */; };
 		8BE2BED0F80A98A79668371F /* Pods_InstaFamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE31AC253FCA96B6746BDFA /* Pods_InstaFamUITests.framework */; };
 		A95F34833B40DF02A05C2437 /* Pods_InstaFamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D212A106AF6FAFF9C07B4528 /* Pods_InstaFamTests.framework */; };
+		DB096DC02043993F006070C6 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB096DBF2043993F006070C6 /* PostCell.swift */; };
 		DB454140203B9226007B45F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB45413F203B9226007B45F2 /* LoginViewController.swift */; };
 		DB85920B20425BE500436787 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85920A20425BE500436787 /* ComposeViewController.swift */; };
 		DBC2B48A203B8B7000E47C67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC2B489203B8B7000E47C67 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		A2D2A67B0C1931674A3AD3FF /* Pods-InstaFamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaFamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaFamTests/Pods-InstaFamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C08B994B28FFDA0A0CA5E114 /* Pods-InstaFam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaFam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaFam/Pods-InstaFam.debug.xcconfig"; sourceTree = "<group>"; };
 		D212A106AF6FAFF9C07B4528 /* Pods_InstaFamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaFamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB096DBF2043993F006070C6 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		DB45413F203B9226007B45F2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DB85920A20425BE500436787 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		DBC2B486203B8B7000E47C67 /* InstaFam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaFam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,14 +112,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DB454141203B940C007B45F2 /* Views */ = {
+		DB096DBE2043983E006070C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB096DBF2043993F006070C6 /* PostCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB454141203B940C007B45F2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				DB85920A20425BE500436787 /* ComposeViewController.swift */,
 				DB45413F203B9226007B45F2 /* LoginViewController.swift */,
 				DBE9FFAF20421E5600277606 /* HomeViewController.swift */,
 			);
-			path = Views;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DBC2B47D203B8B7000E47C67 = {
@@ -145,8 +155,9 @@
 		DBC2B488203B8B7000E47C67 /* InstaFam */ = {
 			isa = PBXGroup;
 			children = (
+				DB096DBE2043983E006070C6 /* Views */,
 				DBD1D34120434EF2007DF55C /* Models */,
-				DB454141203B940C007B45F2 /* Views */,
+				DB454141203B940C007B45F2 /* ViewControllers */,
 				DBC2B489203B8B7000E47C67 /* AppDelegate.swift */,
 				DBC2B48D203B8B7000E47C67 /* Main.storyboard */,
 				DBC2B492203B8B7000E47C67 /* LaunchScreen.storyboard */,
@@ -342,12 +353,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-InstaFam/Pods-InstaFam-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +509,7 @@
 				DBE9FFB020421E5600277606 /* HomeViewController.swift in Sources */,
 				DB85920B20425BE500436787 /* ComposeViewController.swift in Sources */,
 				DBD1D34320434F0F007DF55C /* Post.swift in Sources */,
+				DB096DC02043993F006070C6 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
