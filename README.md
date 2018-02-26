@@ -48,6 +48,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
+* Please view [gif here](https://image.ibb.co/ijNwqx/instagram_Req.gif). GitHub has a gif-displaying bug; clicking embedded gif leads to a message "Content length exceeded". 
 <img src='https://image.ibb.co/ijNwqx/instagram_Req.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
